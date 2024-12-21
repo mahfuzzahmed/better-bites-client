@@ -10,7 +10,7 @@ const Login = () => {
     // const emailRef = useRef()
 
     const { userLogin, googleSignIn, setUser, } = useContext(AuthContext)
-    console.log(error,"this one")
+    // console.log(error,"this one")
 
     const handleLogin = (e) => {
         e.preventDefault()
