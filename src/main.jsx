@@ -6,6 +6,7 @@ import MainLayout from "./Layout/MainLayout.jsx"
 import AuthLayout from "./Layout/AuthLayout.jsx"
 import Login from "./Pages/Login.jsx"
 import Register from "./Pages/Register.jsx"
+import ErrorPage from './Pages/ErrorPage.jsx';
 
 import {
   createBrowserRouter,
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
         ]
       }
     ]
+  },
+  {
+    path: "*",
+    element: <ErrorPage></ErrorPage>
   },
 ]);
 
