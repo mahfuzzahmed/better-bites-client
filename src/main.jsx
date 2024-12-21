@@ -12,13 +12,38 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import HomeLayout from './Layout/HomeLayout.jsx';
+import AvailableFood from './Pages/AvailableFood.jsx';
+import AddFood from './Pages/AddFood.jsx';
+import ManageFoods from './Pages/ManageFoods.jsx';
+import MyFoodRequest from './Pages/MyFoodRequest.jsx';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout></MainLayout> ,
-    children:[
+    element: <MainLayout></MainLayout>,
+    children: [
+      {
+        path: '/',
+        element: <HomeLayout></HomeLayout>
+      },
+      {
+        path: '/availableFood',
+        element: <AvailableFood></AvailableFood>
+      },
+      {
+        path: '/addFood',
+        element: <AddFood></AddFood>
+      },
+      {
+        path: '/manageFoods',
+        element: <ManageFoods></ManageFoods>
+      },
+      {
+        path: '/foodRequest',
+        element: <MyFoodRequest></MyFoodRequest>
+      },
       {
         path: "/auth",
         element: <AuthLayout></AuthLayout>,

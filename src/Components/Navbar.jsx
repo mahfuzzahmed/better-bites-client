@@ -8,10 +8,10 @@ const Navbar = () => {
 
     const links = <>
         <li className="text-white"><NavLink to="/">Home</NavLink></li>
-        <li className="text-white"><NavLink to="/allMovies">Available Food</NavLink></li>
-        <li className="text-white"><NavLink to="/addMovies">Add Food</NavLink></li>
-        <li className="text-white"><NavLink to="/myFavorite">Manage Foods</NavLink></li>
-        <li className="text-white"><NavLink to="/AppDownload">My Food Request</NavLink></li>
+        <li className="text-white"><NavLink to="/availableFood">Available Food</NavLink></li>
+        <li className="text-white"><NavLink to="/addFood">Add Food</NavLink></li>
+        <li className="text-white"><NavLink to="/manageFoods">Manage Foods</NavLink></li>
+        <li className="text-white"><NavLink to="/foodRequest">My Food Request</NavLink></li>
     </>
     return (
         <div>
@@ -59,7 +59,7 @@ const Navbar = () => {
 
                             <button
                                 onClick={userLogOut}
-                                className="btn btn-neutral bg-[#006B5D] rounded-lg">
+                                className="btn btn-neutral text-white bg-[#006B5D] rounded-lg">
                                 Log-Out
                             </button>
 
@@ -67,10 +67,10 @@ const Navbar = () => {
 
                     ) : (
                         <div className="flex gap-4">
-                            <Link to="/auth/login" className="btn btn-neutral rounded-lg bg-[#006B5D]">
+                            <Link to="/auth/login" className="btn text-white btn-neutral rounded-lg bg-[#006B5D]">
                                 Login
                             </Link>
-                            <Link to="/auth/register" className="btn btn-neutral rounded-lg bg-[#006B5D]">
+                            <Link to="/auth/register" className="btn text-white btn-neutral rounded-lg bg-[#006B5D]">
                                 Register
                             </Link>
                         </div>
