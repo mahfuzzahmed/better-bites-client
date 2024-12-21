@@ -7,11 +7,11 @@ const Navbar = () => {
     const { user, userLogOut } = useContext(AuthContext)
 
     const links = <>
-        <li className="text-white"><NavLink to="/">Home</NavLink></li>
-        <li className="text-white"><NavLink to="/availableFood">Available Food</NavLink></li>
-        <li className="text-white"><NavLink to="/addFood">Add Food</NavLink></li>
-        <li className="text-white"><NavLink to="/manageFoods">Manage Foods</NavLink></li>
-        <li className="text-white"><NavLink to="/foodRequest">My Food Request</NavLink></li>
+        <li className="text-black"><NavLink to="/">Home</NavLink></li>
+        <li className="text-black"><NavLink to="/availableFood">Available Food</NavLink></li>
+        <li className="text-black"><NavLink to="/addFood">Add Food</NavLink></li>
+        <li className="text-black"><NavLink to="/manageFoods">Manage Foods</NavLink></li>
+        <li className="text-black"><NavLink to="/foodRequest">My Food Request</NavLink></li>
     </>
     return (
         <div>
@@ -38,7 +38,7 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <Link to='/'><button className=" text-xl text-[#008080] font-bold">Better<span className="text-[#FFC107]">Bites</span></button></Link>
+                    <Link to='/'><button className=" text-3xl text-[#008080] font-bold">Better<span className="text-[#FFC107]">Bites</span></button></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

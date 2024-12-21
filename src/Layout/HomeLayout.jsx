@@ -1,9 +1,11 @@
+import AppDownloadSection from "../Components/AppDownloadSection";
+import Banner from "../Components/Banner";
 
 const HomeLayout = () => {
     return (
         <div>
             <header>
-                <h2>banner</h2>
+                <Banner></Banner>
             </header>
             <main>
                 <section>
@@ -11,6 +13,7 @@ const HomeLayout = () => {
                 </section>
                 <section>
                     <h2>extra-1</h2>
+                    <AppDownloadSection></AppDownloadSection>
                 </section>
                 <section>
                     <h2>extra-2</h2>
