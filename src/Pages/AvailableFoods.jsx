@@ -117,7 +117,7 @@ const AvailableFoods = () => {
                                 Location: {food.pickupLocation}
                             </p>
                             <button
-                                onClick={() => navigate(`/foods/${food._id}`)}
+                                onClick={() => navigate(`/food/${food._id}`)}
                                 className="btn btn-primary mt-4 w-full"
                             >
                                 View Details
