@@ -12,7 +12,6 @@ const HomeLayout = () => {
                     <h2>featured foods</h2>
                 </section>
                 <section>
-                    <h2>extra-1</h2>
                     <AppDownloadSection></AppDownloadSection>
                 </section>
                 <section>
