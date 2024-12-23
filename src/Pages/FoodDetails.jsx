@@ -30,7 +30,7 @@ const FoodDetails = () => {
                         title: "Food Requested Successfully!",
                         text: "The food has been added to your requests.",
                     });
-                    navigate("/my-requests"); // Redirect to My Requests page
+                    navigate("/foodRequest"); // Redirect to My Requests page
                 }
             });
     };

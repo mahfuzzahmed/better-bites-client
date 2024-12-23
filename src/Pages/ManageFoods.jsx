@@ -91,7 +91,7 @@ const ManageFoods = () => {
                                 <td className="border border-gray-300 px-4 py-2">{food.foodName}</td>
                                 <td className="border border-gray-300 px-4 py-2">{food.foodQuantity}</td>
                                 <td className="border border-gray-300 px-4 py-2">{food.pickupLocation}</td>
-                                <td className="border border-gray-300 px-4 py-2">
+                                <td className="border border-gray-300 px-4 py-2 text-center">
                                     <button
                                         onClick={() => setEditingFood(food)}
                                         className="btn btn-sm btn-warning mr-2"

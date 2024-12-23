@@ -19,6 +19,7 @@ import MyFoodRequest from './Pages/MyFoodRequest.jsx';
 import PrivateRoute from './Route/PrivateRoute.jsx';
 import AvailableFoods from './Pages/AvailableFoods.jsx';
 import FoodDetails from './Pages/FoodDetails.jsx';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 
 const router = createBrowserRouter([
@@ -36,20 +37,20 @@ const router = createBrowserRouter([
       },
       {
         path: '/addFood',
-        element:  <PrivateRoute><AddFood></AddFood></PrivateRoute>
+        element: <PrivateRoute><AddFood></AddFood></PrivateRoute>
       },
       {
         path: '/food/:id',
-        element:  <PrivateRoute><FoodDetails></FoodDetails></PrivateRoute>,
-        loader: ({params})=> fetch(`http://localhost:5000/food/${params.id}`)
+        element: <PrivateRoute><FoodDetails></FoodDetails></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/food/${params.id}`)
       },
       {
         path: '/manageFoods',
-        element:  <PrivateRoute><ManageFoods></ManageFoods></PrivateRoute>
+        element: <PrivateRoute><ManageFoods></ManageFoods></PrivateRoute>
       },
       {
         path: '/foodRequest',
-        element:  <PrivateRoute><MyFoodRequest></MyFoodRequest></PrivateRoute>
+        element: <PrivateRoute><MyFoodRequest></MyFoodRequest></PrivateRoute>
       },
       {
         path: "/auth",
@@ -72,11 +73,15 @@ const router = createBrowserRouter([
     element: <ErrorPage></ErrorPage>
   },
 ]);
+const queryClient = new QueryClient();
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <QueryClientProvider client={queryClient}>
     <AuthProvider>
       <RouterProvider router={router} />
     </AuthProvider>
+    </QueryClientProvider>
+
   </StrictMode>,
 )
