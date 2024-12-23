@@ -6,7 +6,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 const MyFoodRequest = () => {
     // const [foodRequests, setFoodRequests] = useState([]);
     const queryClient = useQueryClient();
-    const { user } = useContext(AuthContext); // Replace with dynamic email from user context
+    const { user } = useContext(AuthContext); 
     const userEmail = user?.email
     console.log(userEmail)
 

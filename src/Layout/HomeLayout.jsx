@@ -1,5 +1,6 @@
 import AppDownloadSection from "../Components/AppDownloadSection";
 import Banner from "../Components/Banner";
+import HowWeDoit from "../Components/HowWeDoit";
 
 const HomeLayout = () => {
     return (
@@ -7,15 +8,15 @@ const HomeLayout = () => {
             <header>
                 <Banner></Banner>
             </header>
-            <main>
+            <main className="">
                 <section>
                     <h2>featured foods</h2>
                 </section>
                 <section>
                     <AppDownloadSection></AppDownloadSection>
                 </section>
-                <section>
-                    <h2>extra-2</h2>
+                <section className="container mx-auto">
+                    <HowWeDoit></HowWeDoit>
                 </section>
             </main>
         </div>

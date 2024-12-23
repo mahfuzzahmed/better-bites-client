@@ -14,8 +14,8 @@ const Navbar = () => {
         <li className="text-black"><NavLink to="/foodRequest">My Food Request</NavLink></li>
     </>
     return (
-        <div>
-            <div className="navbar z-50">
+        <div className="container mx-auto">
+            <div className="navbar z-50 ">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
