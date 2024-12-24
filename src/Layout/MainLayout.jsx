@@ -11,11 +11,11 @@ const MainLayout = () => {
             </nav>
         </div>
 
-        <main className="">
+        <main className="min-h-screen">
             <Outlet></Outlet>
         </main>
 
-        <footer>
+        <footer className="">
             <Footer></Footer>
         </footer>
     </div>

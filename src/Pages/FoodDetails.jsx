@@ -30,13 +30,13 @@ const FoodDetails = () => {
                         title: "Food Requested Successfully!",
                         text: "The food has been added to your requests.",
                     });
-                    navigate("/foodRequest"); // Redirect to My Requests page
+                    navigate("/foodRequest"); 
                 }
             });
     };
 
     return (
-        <div className="max-w-3xl mx-auto p-4 bg-white shadow-md rounded-lg">
+        <div className="max-w-3xl mx-auto p-4 bg-white shadow-md rounded-lg mt-7">
             <h2 className="text-2xl font-bold mb-4">{food.foodName}</h2>
             <img
                 src={food.foodImage}

@@ -1,5 +1,6 @@
 import AppDownloadSection from "../Components/AppDownloadSection";
 import Banner from "../Components/Banner";
+import FeaturedFoods from "../Components/FeaturedFoods";
 import HowWeDoit from "../Components/HowWeDoit";
 
 const HomeLayout = () => {
@@ -10,7 +11,7 @@ const HomeLayout = () => {
             </header>
             <main className="">
                 <section>
-                    <h2>featured foods</h2>
+                    <FeaturedFoods></FeaturedFoods>
                 </section>
                 <section>
                     <AppDownloadSection></AppDownloadSection>

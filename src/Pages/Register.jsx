@@ -2,10 +2,11 @@ import { useContext, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Register = () => {
     const navigate = useNavigate()
-    const { createNewUser, setUser, googleSignIn, updateUserProfile} = useContext(AuthContext)
+    const { createNewUser, setUser, googleSignIn, updateUserProfile } = useContext(AuthContext)
     const [error, setError] = useState(null)
     const handleRegister = (e) => {
         e.preventDefault()
@@ -38,6 +39,10 @@ const Register = () => {
         createNewUser(email, password)
             .then(res => {
                 console.log(res.user)
+                Swal.fire({
+                    icon: "success",
+                    title: "Registration Successful!",
+                });
                 setUser(res.user);
                 updateUserProfile({ displayName: name, photoURL: photo })
                     .then(() => {
@@ -58,6 +63,10 @@ const Register = () => {
         // login with google 
         googleSignIn()
             .then(res => {
+                Swal.fire({
+                    icon: "success",
+                    title: "Logged in Successfully",
+                });
                 console.log(res.user)
                 navigate("/");
                 setUser(res.user)
@@ -127,8 +136,8 @@ const Register = () => {
                             required
                         />
                         <label className="label">
-                        {error && <label className="label text-red-700 text-sm">{error}</label>}
-                    </label>
+                            {error && <label className="label text-red-700 text-sm">{error}</label>}
+                        </label>
                     </div>
 
                     <div className="form-control mt-6">

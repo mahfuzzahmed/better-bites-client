@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
+import axios from "axios";
 
 const ManageFoods = () => {
     const { user } = useContext(AuthContext);
@@ -9,9 +10,15 @@ const ManageFoods = () => {
 
     // Fetch user's foods
     useEffect(() => {
-        fetch(`http://localhost:5000/manage-foods?email=${user?.email}`)
-            .then((res) => res.json())
-            .then((data) => setFoods(data));
+        // fetch(`http://localhost:5000/manage-foods?email=${user?.email}`)
+        //     .then((res) => res.json())
+        //     .then((data) => setFoods(data));
+        axios.get(`http://localhost:5000/manage-foods?email=${user?.email}`, {
+            withCredentials: true
+        })
+        .then(res => setFoods(res.data))
+
+
     }, [user?.email]);
 
     // Handle delete action
@@ -73,7 +80,7 @@ const ManageFoods = () => {
     };
 
     return (
-        <div className="p-4">
+        <div className="p-4 mt-8">
             <h2 className="text-2xl font-bold text-center mb-4">Manage Your Foods</h2>
             <div className="overflow-x-auto">
                 <table className="table-auto w-full border-collapse border border-gray-300">

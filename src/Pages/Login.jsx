@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
     const [error, setError] = useState(null)
@@ -21,6 +22,10 @@ const Login = () => {
         // login with email and password
         userLogin(email, password)
             .then(res => {
+                Swal.fire({
+                                icon: "success",
+                                title: "Logged in Successfully",
+                            });
                 navigate(location?.state ? location.state : "/");
                 console.log(res.user)
             })
@@ -35,6 +40,10 @@ const Login = () => {
         googleSignIn()
             .then(res => {
                 setUser(res.user)
+                Swal.fire({
+                                icon: "success",
+                                title: "Logged in Successfully",
+                            });
                 console.log(res.user)
                 navigate("/");
             })

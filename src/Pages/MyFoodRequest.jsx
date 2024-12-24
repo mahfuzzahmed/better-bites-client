@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
+import { FaUser, FaEnvelope, FaMapMarkerAlt, FaCalendarAlt, FaStickyNote } from "react-icons/fa";
+
 
 const MyFoodRequest = () => {
     // const [foodRequests, setFoodRequests] = useState([]);
@@ -62,52 +64,63 @@ const MyFoodRequest = () => {
 
     return (
         <div className="container mx-auto p-6">
-            <h1 className="text-2xl font-bold mb-6">My Food Requests</h1>
-            {/* Scrollable container for the table */}
-            <div className="overflow-x-auto">
-                <table className="table-auto w-full border-collapse border border-gray-200">
-                    <thead>
-                        <tr>
-                            <th className="border px-4 py-2">Food Name</th>
-                            <th className="border px-4 py-2 hidden sm:table-cell">Donor Name</th>
-                            <th className="border px-4 py-2 hidden md:table-cell">Pickup Location</th>
-                            <th className="border px-4 py-2 hidden lg:table-cell">Expire Date</th>
-                            <th className="border px-4 py-2 hidden lg:table-cell">Request Date</th>
-                            <th className="border px-4 py-2">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {foodRequests?.map((request) => (
-                            <tr key={request._id}>
-                                <td className="border px-4 py-2">{request.foodName}</td>
-                                <td className="border px-4 py-2 hidden sm:table-cell">
-                                    {request.donatorName}
-                                </td>
-                                <td className="border px-4 py-2 hidden md:table-cell">
-                                    {request.pickupLocation}
-                                </td>
-                                <td className="border px-4 py-2 hidden lg:table-cell">
-                                    {request.expiredDate}
-                                </td>
-                                <td className="border px-4 py-2 hidden lg:table-cell">
-                                    {request.requestDate}
-                                </td>
-                                <td className="border px-4 py-2">
-                                    <button
-                                        className="bg-red-500 text-white px-4 py-2 rounded"
-                                        onClick={() => handleUpdateAndDelete(request._id)}
-                                    >
-                                        Cancel Request
-                                    </button>
+        <h1 className="text-2xl font-bold mb-6">My Food Requests</h1>
 
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
+        <div className="flex flex-col space-y-4">
+            {foodRequests?.map((request) => (
+                <div
+                    key={request._id}
+                    className="card card-side bg-base-100 shadow-xl"
+                >
+                    <figure>
+                        <img
+                            src={request.foodImage}
+                            alt={request.foodName}
+                            className="w-96 h-full object-cover"
+                        />
+                    </figure>
+                    <div className="card-body">
+                        <h2 className="card-title">{request.foodName}</h2>
+                        <div className="flex items-center space-x-2">
+                            <FaUser className="text-blue-500" />
+                            <p className="text-gray-700 font-medium">{request.donatorName}</p>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                            <FaEnvelope className="text-blue-500" />
+                            <p className="text-gray-700">{request.donatorEmail}</p>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                            <FaMapMarkerAlt className="text-green-500" />
+                            <p className="text-gray-700">{request.pickupLocation}</p>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                            <FaCalendarAlt className="text-yellow-500" />
+                            <p className="text-gray-700">Expires: {request.expiredDate}</p>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                            <FaCalendarAlt className="text-yellow-500" />
+                            <p className="text-gray-700">Requested: {request.requestDate}</p>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                            <FaStickyNote className="text-purple-500" />
+                            <p className="text-gray-700">
+                                {request.additionalNotes || "No additional notes"}
+                            </p>
+                        </div>
+                        <div className="card-actions justify-end">
+                            <button
+                                className="btn btn-primary"
+                                onClick={() => handleUpdateAndDelete(request._id)}
+                            >
+                                Cancel Request
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            ))}
         </div>
-    );
-}
+    </div>
+);
+};
 
 export default MyFoodRequest;
