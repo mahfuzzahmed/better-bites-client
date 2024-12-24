@@ -9,7 +9,7 @@ const Banner = () => {
             <div className="absolute inset-0 bg-black bg-opacity-50"></div>
 
             {/* Content */}
-            <div className="absolute z-10 top-20 left-9 max-w-2xl px-4 md:px-8">
+            <div className="absolute z-10 top-48 left-9 max-w-2xl px-4 md:px-8">
                 <h1 className="text-white text-3xl md:text-5xl font-bold mb-4">
                     Fighting Food Waste, Feeding Communities
                 </h1>

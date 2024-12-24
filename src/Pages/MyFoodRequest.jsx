@@ -3,6 +3,8 @@ import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
 import { FaUser, FaEnvelope, FaMapMarkerAlt, FaCalendarAlt, FaStickyNote } from "react-icons/fa";
+import axios from "axios";
+import UseAxiosSecure from "../Axios/UseAxiosSecure";
 
 
 const MyFoodRequest = () => {
@@ -11,13 +13,16 @@ const MyFoodRequest = () => {
     const { user } = useContext(AuthContext); 
     const userEmail = user?.email
     console.log(userEmail)
+    const axiosSecure = UseAxiosSecure()
 
     // Fetch food requests of logged-in user
     const { isLoading, data: foodRequests, isError, error } = useQuery({
         queryKey: ['foodRequests'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/my-food-requests?email=${userEmail}`);
-            return res.json();
+            // const res = await fetch(`http://localhost:5000/my-food-requests?email=${userEmail}`);
+            // return res.json();
+            const res = await axiosSecure.get(`/my-food-requests?email=${userEmail}`);
+            return res.data; 
         },
     });
     console.log(foodRequests)
@@ -63,8 +68,8 @@ const MyFoodRequest = () => {
     if (isError) return <div>Error: {error.message}</div>;
 
     return (
-        <div className="container mx-auto p-6">
-        <h1 className="text-2xl font-bold mb-6">My Food Requests</h1>
+        <div className="container mx-auto p-6 mt-8">
+        <h1 className="text-2xl font-bold mb-8 text-center">My Food Requests</h1>
 
         <div className="flex flex-col space-y-4">
             {foodRequests?.map((request) => (

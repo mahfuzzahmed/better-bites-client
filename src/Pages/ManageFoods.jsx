@@ -2,24 +2,25 @@ import { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../Provider/AuthProvider";
 import axios from "axios";
+import UseAxiosSecure from "../Axios/UseAxiosSecure";
 
 const ManageFoods = () => {
     const { user } = useContext(AuthContext);
     const [foods, setFoods] = useState([]);
     const [editingFood, setEditingFood] = useState(null); // Food to edit
+    
+    const axiosSecure = UseAxiosSecure()
 
     // Fetch user's foods
     useEffect(() => {
         // fetch(`http://localhost:5000/manage-foods?email=${user?.email}`)
         //     .then((res) => res.json())
         //     .then((data) => setFoods(data));
-        axios.get(`http://localhost:5000/manage-foods?email=${user?.email}`, {
-            withCredentials: true
-        })
+        axiosSecure.get(`/manage-foods?email=${user?.email}`)
         .then(res => setFoods(res.data))
 
 
-    }, [user?.email]);
+    }, [axiosSecure, user?.email]);
 
     // Handle delete action
     const handleDelete = (foodId) => {

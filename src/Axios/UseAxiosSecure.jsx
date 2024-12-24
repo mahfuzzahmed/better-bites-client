@@ -10,22 +10,22 @@ const axiosInstance = axios.create({
 })
 
 const UseAxiosSecure = () => {
-    const{signOutUser} = useContext(AuthContext)
+    const{userLogOut} = useContext(AuthContext)
     const navigate = useNavigate()
     useEffect(()=>{
         axiosInstance.interceptors.response.use(response=>{
             return response 
         },error=>{
             if(error.status === 401 || error.status === 403){
-                signOutUser()
+                userLogOut()
                 .then(()=>{
-                    navigate('/login')
+                    navigate('/auth/login')
                 })
                 .catch(err=> console.log(err))
             }
             return Promise.reject(error)
         })
-    },[])
+    },[navigate, userLogOut])
     return axiosInstance
 };
 
