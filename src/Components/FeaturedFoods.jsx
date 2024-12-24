@@ -1,7 +1,7 @@
 // FeaturedFoods.jsx
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const FeaturedFoods = () => {
     const navigate = useNavigate();
@@ -57,6 +57,9 @@ const FeaturedFoods = () => {
                         </div>
                     </div>
                 ))}
+            </div>
+            <div className='flex justify-center items-center'>
+                <Link to={'/availableFood'}><button className='mt-8 btn btn-wide bg-green-500 text-center'>Show All</button></Link>
             </div>
         </div>
     );

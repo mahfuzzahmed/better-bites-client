@@ -3,7 +3,7 @@ import retailer from "../assets/retailer.jpg"
 import wholesale from "../assets/wholesale.jpg"
 const HowWeDoit = () => {
     return (
-        <div className="bg-green-500 text-white py-12">
+        <div className="bg-green-500 text-white py-12 rounded-xl">
             <div className="text-center mb-8">
                 <h2 className="text-2xl font-bold mb-4">How We Do It</h2>
                 <h2 className="text-3xl font-bold">Making Fresh Food Donations <br /> Simple and Accessible</h2>

@@ -52,14 +52,14 @@ const Navbar = () => {
                             <img
                                 src={user?.photoURL}
                                 alt="User Profile"
-                                className="w-10 h-10 rounded-full border border-[#FFC107] object-cover cursor-pointer"
+                                className="w-10 h-10 rounded-full border object-cover cursor-pointer"
                             />
 
                             {/* logout button */}
 
                             <button
                                 onClick={userLogOut}
-                                className="btn btn-neutral text-white bg-[#008080] rounded-lg">
+                                className="btn btn-neutral border-none text-white bg-[#008080] rounded-lg">
                                 Log-Out
                             </button>
 

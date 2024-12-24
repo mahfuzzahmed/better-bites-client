@@ -18,10 +18,10 @@ const Banner = () => {
                     to those in need. Join our mission to make a difference!
                 </p>
                 <div className="flex flex-col md:flex-row gap-4 ">
-                    <button className="bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-full">
+                    <button className="bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-xl">
                         Donate Now
                     </button>
-                    <button className="bg-gray-100 hover:bg-gray-200 text-gray-800 py-3 px-6 rounded-full">
+                    <button className="bg-gray-100 hover:bg-gray-200 text-gray-800 py-3 px-6 rounded-xl">
                         Get Involved
                     </button>
                 </div>
