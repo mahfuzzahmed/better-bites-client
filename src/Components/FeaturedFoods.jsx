@@ -11,11 +11,11 @@ const FeaturedFoods = () => {
     useEffect(() => {
         const fetchFeaturedFoods = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/featured-foods');
+                const response = await axios.get('https://server-side-alpha-ecru.vercel.app/featured-foods');
                 setFoods(response.data);
                 setLoading(false);
             } catch (err) {
-                console.log(err)
+                // console.log(err)
                 setError('Error fetching featured foods');
                 setLoading(false);
             }

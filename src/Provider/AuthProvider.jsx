@@ -37,17 +37,17 @@ const AuthProvider = ({ children }) => {
             if (currentUser?.email) {
                 const user = { email: currentUser.email };
 
-                axios.post('http://localhost:5000/jwt', user, { withCredentials: true })
+                axios.post('https://server-side-alpha-ecru.vercel.app/jwt', user, { withCredentials: true })
                     .then(res => {
-                        console.log('login token', res.data)
+                        // console.log('login token', res.data)
                         setLoading(false);
 
                     })
             }
             else {
-                axios.post('http://localhost:5000/logout', user, { withCredentials: true })
+                axios.post('https://server-side-alpha-ecru.vercel.app/logout', user, { withCredentials: true })
                     .then(res => {
-                        console.log('logout', res.data)
+                        // console.log('logout', res.data)
                         setLoading(false);
 
                     })

@@ -13,7 +13,7 @@ const ManageFoods = () => {
 
     // Fetch user's foods
     useEffect(() => {
-        // fetch(`http://localhost:5000/manage-foods?email=${user?.email}`)
+        // fetch(`https://server-side-alpha-ecru.vercel.app/manage-foods?email=${user?.email}`)
         //     .then((res) => res.json())
         //     .then((data) => setFoods(data));
         axiosSecure.get(`/manage-foods?email=${user?.email}`)
@@ -33,7 +33,7 @@ const ManageFoods = () => {
             cancelButtonText: "No, cancel!",
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/deleteFood/${foodId}`, {
+                fetch(`https://server-side-alpha-ecru.vercel.app/deleteFood/${foodId}`, {
                     method: "DELETE",
                 })
                     .then((res) => res.json())
@@ -59,7 +59,7 @@ const ManageFoods = () => {
             additionalNotes: form.additionalNotes.value,
         };
 
-        fetch(`http://localhost:5000/updateFood/${editingFood._id}`, {
+        fetch(`https://server-side-alpha-ecru.vercel.app/updateFood/${editingFood._id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

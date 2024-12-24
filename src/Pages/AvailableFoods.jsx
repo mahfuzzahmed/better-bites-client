@@ -11,7 +11,7 @@ const AvailableFoods = () => {
 
     // Fetch available foods
     useEffect(() => {
-        fetch("http://localhost:5000/foods?status=available")
+        fetch("https://server-side-alpha-ecru.vercel.app/foods?status=available")
             .then((res) => res.json())
             .then((data) => {
                 setFoods(data);

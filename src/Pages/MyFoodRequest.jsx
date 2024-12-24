@@ -12,26 +12,26 @@ const MyFoodRequest = () => {
     const queryClient = useQueryClient();
     const { user } = useContext(AuthContext); 
     const userEmail = user?.email
-    console.log(userEmail)
+    // console.log(userEmail)
     const axiosSecure = UseAxiosSecure()
 
     // Fetch food requests of logged-in user
     const { isLoading, data: foodRequests, isError, error } = useQuery({
         queryKey: ['foodRequests'],
         queryFn: async () => {
-            // const res = await fetch(`http://localhost:5000/my-food-requests?email=${userEmail}`);
+            // const res = await fetch(`https://server-side-alpha-ecru.vercel.app/my-food-requests?email=${userEmail}`);
             // return res.json();
             const res = await axiosSecure.get(`/my-food-requests?email=${userEmail}`);
             return res.data; 
         },
     });
-    console.log(foodRequests)
+    // console.log(foodRequests)
 
 
     // Mutation for deleting a request
     const updateAndDeleteMutation = useMutation({
         mutationFn: async ({ foodId }) => {
-            const res = await fetch(`http://localhost:5000/update-food-request`, {
+            const res = await fetch(`https://server-side-alpha-ecru.vercel.app/update-food-request`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

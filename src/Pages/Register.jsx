@@ -38,7 +38,7 @@ const Register = () => {
         // creating new user
         createNewUser(email, password)
             .then(res => {
-                console.log(res.user)
+                // console.log(res.user)
                 Swal.fire({
                     icon: "success",
                     title: "Registration Successful!",
@@ -49,12 +49,12 @@ const Register = () => {
                         navigate("/");
                     })
                     .catch((err) => {
-                        console.log(err);
+                        // console.log(err);
                     });
 
             })
             .catch(err => {
-                console.log("error", err)
+                // console.log("error", err)
             })
 
 
@@ -67,12 +67,12 @@ const Register = () => {
                     icon: "success",
                     title: "Logged in Successfully",
                 });
-                console.log(res.user)
+                // console.log(res.user)
                 navigate("/");
                 setUser(res.user)
             })
             .catch(err => {
-                console.log("error", err)
+                // console.log("error", err)
             })
     }
     return (

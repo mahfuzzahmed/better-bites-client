@@ -27,11 +27,11 @@ const Login = () => {
                                 title: "Logged in Successfully",
                             });
                 navigate(location?.state ? location.state : "/");
-                console.log(res.user)
+                // console.log(res.user)
             })
             .catch(err => {
                 setError(err);
-                console.log("error", err)
+                // console.log("error", err)
             })
 
     }
@@ -44,11 +44,11 @@ const Login = () => {
                                 icon: "success",
                                 title: "Logged in Successfully",
                             });
-                console.log(res.user)
+                // console.log(res.user)
                 navigate("/");
             })
             .catch(err => {
-                console.log("error", err)
+                // console.log("error", err)
             })
     }
 

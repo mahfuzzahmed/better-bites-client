@@ -15,7 +15,7 @@ const FoodDetails = () => {
         const requestData = Object.fromEntries(formData.entries());
         requestData.foodStatus = "requested";
 
-        fetch(`http://localhost:5000/foods/request`, {
+        fetch(`https://server-side-alpha-ecru.vercel.app/foods/request`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

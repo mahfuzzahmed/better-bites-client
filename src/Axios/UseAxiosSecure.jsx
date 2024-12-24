@@ -5,7 +5,7 @@ import { useContext, useEffect } from 'react';
 
 
 const axiosInstance = axios.create({
-    baseURL: 'http://localhost:5000',
+    baseURL: 'https://server-side-alpha-ecru.vercel.app',
     withCredentials: true
 })
 
@@ -21,7 +21,9 @@ const UseAxiosSecure = () => {
                 .then(()=>{
                     navigate('/auth/login')
                 })
-                .catch(err=> console.log(err))
+                .catch(err=> {
+                    // console.log(err)
+                })
             }
             return Promise.reject(error)
         })
