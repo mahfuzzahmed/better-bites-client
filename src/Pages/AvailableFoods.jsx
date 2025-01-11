@@ -6,7 +6,7 @@ const AvailableFoods = () => {
     const [filteredFoods, setFilteredFoods] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
     const [sortOrder, setSortOrder] = useState("");
-    const [isThreeColumn, setIsThreeColumn] = useState(true); // Toggle for layout
+    const [isThreeColumn, setIsThreeColumn] = useState(true); 
     const navigate = useNavigate();
 
     // Fetch available foods
@@ -79,13 +79,13 @@ const AvailableFoods = () => {
                 <div className="flex justify-end ">
                     <button
                         onClick={() => setIsThreeColumn(true)}
-                        className={`btn ${isThreeColumn ? "btn-primary" : "btn-outline"} rounded-none rounded-l-md`}
+                        className={`btn ${isThreeColumn ? "btn bg-[#FFC107] " : "btn-outline"} rounded-none rounded-l-md`}
                     >
                         3 Column 
                     </button>
                     <button
                         onClick={() => setIsThreeColumn(false)}
-                        className={`btn ${!isThreeColumn ? "btn-primary" : "btn-outline"} rounded-none rounded-r-md `}
+                        className={`btn ${!isThreeColumn ? "btn bg-[#FFC107] " : "btn-outline"} rounded-none rounded-r-md `}
                     >
                         2 Column 
                     </button>
@@ -118,7 +118,7 @@ const AvailableFoods = () => {
                             </p>
                             <button
                                 onClick={() => navigate(`/food/${food._id}`)}
-                                className="btn btn-primary mt-4 w-full"
+                                className="btn bg-green-500 hover:bg-green-700 border-none text-black mt-4 w-full"
                             >
                                 View Details
                             </button>

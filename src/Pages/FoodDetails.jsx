@@ -52,7 +52,7 @@ const FoodDetails = () => {
 
             <label
                 htmlFor="request-modal"
-                className="btn btn-primary mt-4"
+                className="btn bg-[#FFC107] mt-4"
             >
                 Request Food
             </label>

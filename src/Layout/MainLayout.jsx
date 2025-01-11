@@ -4,21 +4,21 @@ import Footer from "../Components/Footer"
 
 const MainLayout = () => {
     return (
-        <div>
-        <div className=" ">
-            <nav className="shadow-lg ">
+        <div className="relative">
+
+            <div className="sticky top-0 z-50 bg-white">
                 <Navbar></Navbar>
-            </nav>
+            </div>
+
+
+            <main className="min-h-screen">
+                <Outlet></Outlet>
+            </main>
+
+            <footer className="">
+                <Footer></Footer>
+            </footer>
         </div>
-
-        <main className="min-h-screen">
-            <Outlet></Outlet>
-        </main>
-
-        <footer className="">
-            <Footer></Footer>
-        </footer>
-    </div>
     );
 };
 

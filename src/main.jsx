@@ -20,6 +20,7 @@ import PrivateRoute from './Route/PrivateRoute.jsx';
 import AvailableFoods from './Pages/AvailableFoods.jsx';
 import FoodDetails from './Pages/FoodDetails.jsx';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import AppDownloadSection from './Components/AppDownloadSection.jsx';
 
 
 const router = createBrowserRouter([
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: '/availableFood',
         element: <AvailableFoods></AvailableFoods>
+      },
+      {
+        path: '/getTheApp',
+        element: <AppDownloadSection></AppDownloadSection>
       },
       {
         path: '/addFood',

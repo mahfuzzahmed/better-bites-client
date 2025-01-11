@@ -9,12 +9,15 @@ const Navbar = () => {
     const links = <>
         <li className="text-black"><NavLink to="/">Home</NavLink></li>
         <li className="text-black"><NavLink to="/availableFood">Available Food</NavLink></li>
-        <li className="text-black"><NavLink to="/addFood">Add Food</NavLink></li>
-        <li className="text-black"><NavLink to="/manageFoods">Manage My Foods</NavLink></li>
-        <li className="text-black"><NavLink to="/foodRequest">My Food Request</NavLink></li>
+        {user? <>
+            <li className="text-black"><NavLink to="/addFood">Add Food</NavLink></li>
+            <li className="text-black"><NavLink to="/manageFoods">Manage My Foods</NavLink></li>
+            <li className="text-black"><NavLink to="/foodRequest">My Food Request</NavLink></li>
+        </>: <> <li className="text-black"><NavLink to="/getTheApp">Download App</NavLink></li> </>}
+
     </>
     return (
-        <div className="container mx-auto">
+        <div className="container mx-auto ">
             <div className="navbar z-50 ">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -38,7 +41,8 @@ const Navbar = () => {
                             {links}
                         </ul>
                     </div>
-                    <Link to='/'><button className=" text-3xl text-[#008080] font-bold">Better<span className="text-[#FFC107]">Bites</span></button></Link>
+                    {/* text-[#008080] */}
+                    <Link to='/'><button className=" text-3xl text-green-500  font-bold">Better<span className="text-[#FFC107]">Bites</span></button></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -59,7 +63,7 @@ const Navbar = () => {
 
                             <button
                                 onClick={userLogOut}
-                                className="btn btn-neutral border-none text-white bg-[#008080] rounded-lg">
+                                className="btn  font-medium border-none text-black bg-green-500 hover:bg-green-600 rounded-lg">
                                 Log-Out
                             </button>
 
@@ -67,10 +71,12 @@ const Navbar = () => {
 
                     ) : (
                         <div className="flex gap-4">
-                            <Link to="/auth/login" className="btn text-white btn-neutral rounded-lg bg-[#008080]">
+                            <Link to="/auth/login" className="btn text-black  rounded-lg font-medium
+                            bg-green-500
+                            ">
                                 Login
                             </Link>
-                            <Link to="/auth/register" className="btn text-white btn-neutral rounded-lg bg-[#008080]">
+                            <Link to="/auth/register" className="btn text-black  rounded-lg  font-medium bg-green-500">
                                 Register
                             </Link>
                         </div>

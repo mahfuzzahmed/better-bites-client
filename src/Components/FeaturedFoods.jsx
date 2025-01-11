@@ -16,7 +16,7 @@ const FeaturedFoods = () => {
                 setLoading(false);
             } catch (err) {
                 // console.log(err)
-                setError('Error fetching featured foods');
+                // setError(err);
                 setLoading(false);
             }
         };
@@ -24,7 +24,7 @@ const FeaturedFoods = () => {
         fetchFeaturedFoods();
     }, []);
 
-    if (loading) return <div>Loading Featured Foods...</div>;
+    if (loading) return <span className="loading loading-dots loading-lg"></span>;
 
     return (
         <div className="container mx-auto p-6">
@@ -50,7 +50,7 @@ const FeaturedFoods = () => {
                             </p>
                             <button
                                 onClick={() => navigate(`/food/${food._id}`)}
-                                className="btn btn-primary mt-4 w-full"
+                                className="btn hover:bg-green-600 text-black border-none bg-green-500 mt-4 w-full"
                             >
                                 View Details
                             </button>
@@ -59,7 +59,7 @@ const FeaturedFoods = () => {
                 ))}
             </div>
             <div className='flex justify-center items-center'>
-                <Link to={'/availableFood'}><button className='mt-8 btn btn-wide bg-green-500 text-center'>Show All</button></Link>
+                <Link to={'/availableFood'}><button className='mt-8 btn btn-wide btn-outline hover:bg-[#FFC107] hover:text-black text-center'>Show All</button></Link>
             </div>
         </div>
     );

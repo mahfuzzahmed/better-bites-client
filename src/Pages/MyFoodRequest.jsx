@@ -114,7 +114,7 @@ const MyFoodRequest = () => {
                         </div>
                         <div className="card-actions justify-end">
                             <button
-                                className="btn btn-primary"
+                                className="btn bg-red-500 text-white hover:bg-red-600"
                                 onClick={() => handleUpdateAndDelete(request._id)}
                             >
                                 Cancel Request

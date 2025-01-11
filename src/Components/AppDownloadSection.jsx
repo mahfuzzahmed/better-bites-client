@@ -15,12 +15,12 @@ const AppDownloadSection = () => {
 
             {/* Right Side: Text and Ratings */}
             <div className="w-full md:w-1/2 mt-8 md:mt-0 text-center md:text-left">
-                <h1 className="text-4xl font-bold text-[#008080] mb-4">
+                <h1 className="text-4xl font-bold text-green-500 mb-4">
                     Better <span className="text-[#FFC107]">Bites</span>
                 </h1>
                 <p className="text-lg text-gray-600 mb-6">
                     Share, Save, Savor – Anytime, Anywhere. <br />
-                    <span className="font-semibold text-[#008080]">
+                    <span className="font-semibold text-green-500">
                         Download the App Today and Start Sharing!
                     </span>
                 </p>
@@ -41,7 +41,7 @@ const AppDownloadSection = () => {
 
                 {/* Download Button */}
                 <div className="flex justify-center md:justify-start">
-                    <button className="bg-[#008080] hover:bg-[#0d5353] text-white py-3 px-6 rounded-full text-lg">
+                    <button className="bg-green-500 hover:bg-green-700 text-white py-3 px-6 rounded-full text-lg">
                         Get the App
                     </button>
                 </div>
