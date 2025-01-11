@@ -3,7 +3,7 @@ import appImage from "../assets/app.png"
 
 const AppDownloadSection = () => {
     return (
-        <div className="flex flex-col md:flex-row items-center justify-between  py-10 px-5 md:px-20 ">
+        <div className="flex flex-col md:flex-row items-center justify-between mt-10 mb-10 px-5 md:px-20  border rounded-xl container mx-auto">
             {/* Left Side: Image */}
             <div className="w-full md:w-1/2 flex justify-center">
                 <img
